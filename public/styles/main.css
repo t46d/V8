@@ -1,0 +1,17 @@
+/* Copied styles for public serving */
+:root {
+  --primary-orange: #FF6B00;
+  --secondary-cyan: #00F0FF;
+  --accent-pink: #FF00C8;
+  --dark-bg: #0A0A0A;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --gradient-primary: linear-gradient(135deg, #FF6B00, #FFA726, #FFD54F);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter, sans-serif;background:var(--dark-bg);color:#EAEAEA;min-height:100vh}
+.glass-card{background:var(--glass-bg);backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:12px;padding:16px}
+.glass-header{position:fixed;top:0;left:0;right:0;padding:12px;border-bottom:1px solid var(--glass-border);z-index:1000}
+.btn-primary{background:var(--gradient-primary);color:#fff;padding:10px 14px;border-radius:10px;border:none}
+.btn-secondary{background:transparent;border:2px solid var(--primary-orange);color:var(--primary-orange);padding:10px 14px;border-radius:10px}
+.profile-pic{width:120px;height:120px;border-radius:50%;border:3px solid var(--primary-orange);object-fit:cover}

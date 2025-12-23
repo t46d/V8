@@ -1,0 +1,206 @@
+/* ========== BASE STYLES ========== */
+:root {
+  --primary-orange: #FF6B00;
+  --secondary-cyan: #00F0FF;
+  --accent-pink: #FF00C8;
+  --dark-bg: #0A0A0A;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --gradient-primary: linear-gradient(135deg, #FF6B00, #FFA726, #FFD54F);
+  --gradient-secondary: linear-gradient(135deg, #00F0FF, #FF00C8, #B500FF);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--dark-bg);
+  color: #EAEAEA;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ========== DYNAMIC BACKGROUND ========== */
+.dynamic-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  animation: floatOrb 20s infinite linear;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(100px, -50px) scale(1.1); }
+  50% { transform: translate(-50px, 100px) scale(0.9); }
+  75% { transform: translate(-100px, -100px) scale(1.05); }
+}
+
+/* ========== AGE WARNING ========== */
+.age-warning-temp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, #FF0000, #FF6B00);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+  animation: slideDown 0.5s ease, fadeOut 0.5s ease 10s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.close-warning {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* ========== LANGUAGE SWITCHER ========== */
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  padding: 8px;
+  display: flex;
+  gap: 5px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: #999;
+  padding: 8px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.lang-btn.active {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+/* ========== GLASSMORPHISM COMPONENTS ========== */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+.glass-card:hover {
+  border-color: var(--primary-orange);
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
+}
+
+.glass-header {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* ========== BUTTONS ========== */
+.btn-primary {
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.3);
+}
+
+.btn-secondary {
+  background: var(--glass-bg);
+  border: 2px solid var(--primary-orange);
+  color: var(--primary-orange);
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* ========== PROFILE STYLES ========== */
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-orange);
+  object-fit: cover;
+  background: var(--gradient-primary);
+  padding: 3px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .glass-header {
+    padding: 15px 20px;
+  }
+  
+  .language-switcher {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .age-warning-temp {
+    font-size: 12px;
+    padding: 10px;
+  }
+}

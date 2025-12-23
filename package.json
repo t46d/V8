@@ -1,0 +1,14 @@
+{
+  "name": "vexachat-pro",
+  "version": "1.0.0",
+  "description": "Premium Social Dating Platform",
+  "scripts": {
+    "dev": "serve public",
+    "deploy": "firebase deploy",
+    "emulators": "firebase emulators:start",
+    "build": "echo 'No build step required'"
+  },
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}

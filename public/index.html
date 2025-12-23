@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VeXachat - Premium Social Platform</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="icon" type="image/x-icon" href="/assets/icons/vx-icon.svg">
+</head>
+<body>
+  <!-- Temporary Age Warning -->
+  <div class="age-warning-temp" id="ageWarning">
+    <i class="fas fa-exclamation-triangle fa-shake"></i>
+    <span data-lang="en">⚠️ WARNING: This platform contains adult content (18+). By continuing, you confirm you are 18 years or older.</span>
+    <span data-lang="ar" style="display: none;">⚠️ تحذير: هذه المنصة تحتوي على محتوى للبالغين (18+). بالمتابعة، تؤكد أنك تبلغ 18 عاماً أو أكثر.</span>
+    <button onclick="hideAgeWarning()" class="close-warning">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Language Switcher -->
+  <div class="language-switcher">
+    <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+    <button class="lang-btn" onclick="changeLanguage('ar')">العربية</button>
+    <button class="lang-btn" onclick="changeLanguage('ru')">РУ</button>
+    <button class="lang-btn" onclick="changeLanguage('th')">ไทย</button>
+  </div>
+
+  <!-- Main App Container -->
+  <div id="app">
+    <!-- App will be rendered here by JavaScript -->
+  </div>
+
+  <!-- Scripts -->
+  <script src="/services/firebase-config.js" type="module"></script>
+  <script src="/services/auth-service.js" type="module"></script>
+  <script src="/services/chat-service.js" type="module"></script>
+  <script src="/services/profile-service.js" type="module"></script>
+  <script src="/services/location-service.js" type="module"></script>
+  <script src="/components/ChatWindow.js" type="module"></script>
+  <script src="/components/UserProfile.js" type="module"></script>
+  <script src="/main.js" type="module"></script>
+  
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-storage-compat.js"></script>
+</body>
+</html>
