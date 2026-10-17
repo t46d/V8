@@ -9,6 +9,6 @@
     "build": "echo 'No build step required'"
   },
   "devDependencies": {
-    "serve": "^14.0.0"
+    "serve": "^14.2.6"
   }
 }
